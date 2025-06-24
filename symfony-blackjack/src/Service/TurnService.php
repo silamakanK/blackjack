@@ -37,7 +37,7 @@ class TurnService
         }
 
         $turn = $this->generateTurn($game);
-        $cards = self::shuffleDeck(self::generateDeck());
+        $deck = self::shuffleDeck(self::generateDeck());
         $turn->setDeck($deck);
         $turn->setStatus('waging');
 
@@ -74,10 +74,10 @@ class TurnService
         return $turn;
     }
 
-    public static function generateDeck(): array
+  public static function generateDeck(): array
     {
         $suits = ['heart', 'diamond', 'club', 'spade'];
-        $values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        $values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; // <== ici
 
         $deck = [];
         foreach ($suits as $suit) {
